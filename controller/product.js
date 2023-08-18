@@ -53,10 +53,10 @@
    var data = await product.find({
       "$or":[
          {
-            title :{ $regex: req.params.key }
+            title :{ $regex: req.params.key, $options:'i' }
          },
          { 
-            category:{ $regex: req.params.key }
+            category:{ $regex: req.params.key, $options:'i' }
          }
       ]
    })
